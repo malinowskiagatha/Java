@@ -66,3 +66,61 @@ index.
 - char java.lang.String.substring(int beginIndex, int endIndex) returns a new
 String that is a substring of this String from beginIndex included up to endIndex
 excluded.
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+***Assignment***
+#2
+
+A ***treap*** is a binary search tree(BST) which additionally maintains heap priorities. A node consists of:
+  - A key k (given by the letter in the example),
+  - A random heap priority p (given by the number in the example). The heap priority p
+    is assigned at random upon insertion of a node. It should be unique in the treap (but
+    your code does not need to enforce that).
+  - References to the left and right child node
+ 
+ ***Node Class***
+- Data Fields:
+  - public E data
+  - public int priority
+  - public Node <E> left
+  - public Node <E> right
+- Constructors:
+  - public Node(E data, int priority)
+- Methods:
+  - public Node <E> rotateRight()
+  - public Node <E> rotateLeft()
+  
+***Treap Class***
+- Data fields:
+  - private Random priorityGenerator;
+  - private Node <E> root;
+- Constructors:
+  - public Treap()
+  - public Treap(long seed)
+- Methods:
+  - public boolean add(E key)
+  - public boolean add(E key, int priority)
+  - private Node <E> add(Node <E> localroot, E key, int priority)
+  - public E delete(E key)
+  - private Node <E> delete(Node <E> localroot, E key)
+  - public E find(E key)
+  - private E find(Node <E> root, E key)
+  - public String toString()
+  
+  ***The Add Method***
+    - This method inserts a given element into the tree via public boolean add(E key, int priority). If the priority is not given, the           method should utilize the random priority generator "priorityGenerator".
+    - private Node<E> add(Node<E> localroot, E key, int priority) is a helper function to the add method. It will return true/false           using the addReturn variable in order to add the element into the tree using the add method. addReturn only gets set to false if a       node with the given key already exisits within the treap. 
+ 
+  ***The Delete Method***
+    - This method deletes a node with the given key from the treap and returns the new treap. If the given node's key was not found           within the treap, the treap reamins unchanged.
+    - The private helper function, private Node<E> delete(Node<E> localroot, E key), uses the "deleteReturn" variable. "deleteReturn           will return null only if the given nodes' key does not exist within the tree. The helper method will locate the node with the           given key and, using rotateRight() and rotateLeft(), will move the node down the tree until it becomes a leaf. From there it can         be removed simply.
+
+   ***The Find Method***
+    - This method searches for a given key within the treap.
+    - Its private helper function, private E find(Node<E> root, E key), uses the findReturn variable to help its public method, public E       find(E key), determine if a certin node with the given key exists within the treap. If a node does exist, the node is returned. If       a node does not exist, null is returned.
+
+
+
+
+
