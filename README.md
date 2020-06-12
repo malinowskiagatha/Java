@@ -1,6 +1,6 @@
 # Java
 ***Assignment***
-#1
+#1 : RationalNumber.java
 
 Define a class RationalNumber that represents rational numbers and a few simple operations
 on them, as indicated below. A rational number can be expressed as the fraction p
@@ -70,7 +70,7 @@ excluded.
 ---------------------------------------------------------------------------------------------------------------------------------------
 
 ***Assignment***
-#2
+#2 : Treap.java
 
 A ***treap*** is a binary search tree(BST) which additionally maintains heap priorities. A node consists of:
   - A key k (given by the letter in the example),
